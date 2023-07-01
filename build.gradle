@@ -34,7 +34,7 @@ subprojects {
         // FabricのYarn Mappings
         mappings "net.fabricmc:yarn:${rootProject.yarn_mappings}:v2"
 
-        modApi "ml.pkom:mcpitanlibarch-common+${rootProject.mcpitanlibarch_mcversion}:${rootProject.mcpitanlibarch_version}"
+        modApi "ml.pkom:mcpitanlibarch-common+${rootProject.mcpitanlib_version}"
     }
 
     /*
