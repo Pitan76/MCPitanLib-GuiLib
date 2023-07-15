@@ -22,7 +22,7 @@ dependencies {
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
 
-    modApi "ml.pkom:mcpitanlibarch-forge+${rootProject.mcpitanlibarch_mcversion}:${rootProject.mcpitanlibarch_version}"
+    modApi "ml.pkom:mcpitanlibarch-forge+${rootProject.mcpitanlib_version}"
 }
 
 processResources {
