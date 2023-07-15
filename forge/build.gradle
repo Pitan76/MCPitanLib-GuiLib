@@ -30,7 +30,7 @@ processResources {
             "mod_name": project.mod_name,
             "version": project.version,
             "mod_id": project.mod_id,
-            "mcpitanlibarch_version": rootProject.mcpitanlibarch_version
+            "mcpitanlib_version": rootProject.mcpitanlib_version
     ]
     inputs.properties map
 
