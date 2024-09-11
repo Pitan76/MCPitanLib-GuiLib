@@ -36,8 +36,8 @@ versionRange = "[2.3.0,)"
 ordering = "BEFORE"
 side = "BOTH"
 
-# [[mixins]]
-# config = "examplemod-common.mixins.json"
+[[mixins]]
+config = "examplemod-common.mixins.json"
 
-# [[mixins]]
-# config = "examplemod.mixins.json"
+[[mixins]]
+config = "examplemod.mixins.json"
