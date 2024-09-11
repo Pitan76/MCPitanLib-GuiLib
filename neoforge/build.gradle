@@ -1,14 +1,13 @@
 plugins {
     id "com.github.johnrengelman.shadow" version "7.1.2"
 }
-
 architectury {
     platformSetupLoomIde()
-    fabric()
+    neoForge()
 }
 
 loom {
-    accessWidenerPath = project(":common").loom.accessWidenerPath
+    // accessWidenerPath = project(":common").loom.accessWidenerPath
 }
 
 configurations {
@@ -16,18 +15,17 @@ configurations {
     shadowCommon
     compileClasspath.extendsFrom common
     runtimeClasspath.extendsFrom common
-    developmentFabric.extendsFrom common
+    developmentNeoForge.extendsFrom common
 }
 
 dependencies {
-    modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
-    modApi "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_version}"
-    modApi "dev.architectury:architectury-fabric:${rootProject.architectury_version}"
+    neoForge "net.neoforged:neoforge:${rootProject.neoforge_version}"
+    modApi "dev.architectury:architectury-neoforge:${rootProject.architectury_version}"
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
-    shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }
+    shadowCommon(project(path: ":common", configuration: "transformProductionNeoForge")) { transitive = false }
 
-    modApi "net.pitan76:mcpitanlib-fabric+${rootProject.mcpitanlib_version}"
+    modApi "net.pitan76:mcpitanlib-neoforge+${rootProject.mcpitanlib_version}"
 }
 
 processResources {
@@ -38,18 +36,23 @@ processResources {
     ]
     inputs.properties map
 
-    filesMatching("fabric.mod.json") {
+    filesMatching("META-INF/mods.toml") {
+        expand map
+    }
+
+    filesMatching("META-INF/neoforge.mods.toml") {
         expand map
     }
 }
 
 shadowJar {
+    exclude "fabric.mod.json"
+
     configurations = [project.configurations.shadowCommon]
     archiveClassifier.set "dev-shadow"
 }
 
 remapJar {
-    // injectAccessWidener = true
     inputFile.set shadowJar.archiveFile
     dependsOn shadowJar
     archiveClassifier.set null
@@ -73,7 +76,7 @@ components.java {
 
 publishing {
     publications {
-        mavenFabric(MavenPublication) {
+        mavenNeoForge(MavenPublication) {
             artifactId = rootProject.archives_base_name + "-" + project.name
             from components.java
         }

@@ -2,7 +2,7 @@
   "pack": {
     "description": "examplemod resources",
     "pack_format": 8,
-    "forge:resource_pack_format": 8,
-    "forge:data_pack_format": 9
+    "neoforge:resource_pack_format": 8,
+    "neoforge:data_pack_format": 9
   }
 }

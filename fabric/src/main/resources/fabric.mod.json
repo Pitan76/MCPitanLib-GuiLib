@@ -9,11 +9,11 @@
   ],
   "contact": {},
   "license": "MIT",
-  "icon": "icon.png",
+  "icon": "assets/examplemod/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "ml.pkom.examplemod.fabric.ExampleModFabric"
+      "net.pitan76.examplemod.fabric.ExampleModFabric"
     ]
   },
   "mixins": [
@@ -23,6 +23,6 @@
   "depends": {
     "fabricloader": "*",
     "minecraft": ">=1.17",
-    "mcpitanlibarch": ">=${mcpitanlib_version}"
+    "mcpitanlib": "*"
   }
 }

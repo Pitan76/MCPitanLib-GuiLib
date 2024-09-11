@@ -1,5 +1,5 @@
 modLoader = "javafml"
-loaderVersion = "[40,)"
+loaderVersion = "[20,)"
 license = "MIT"
 
 [[mods]]
@@ -16,23 +16,28 @@ description = '''
 '''
 
 [[dependencies.${mod_id}]]
-modId = "forge"
-mandatory = true
-versionRange = "[40,)"
+modId = "neoforge"
+type = "required"
+versionRange = "[20,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.${mod_id}]]
 modId = "minecraft"
-mandatory = true
+type = "required"
 versionRange = "[1.16,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.${mod_id}]]
 modId = "mcpitanlib"
-mandatory = true
+type = "required"
 versionRange = "[2.3.0,)"
 ordering = "BEFORE"
 side = "BOTH"
 
+# [[mixins]]
+# config = "examplemod-common.mixins.json"
+
+# [[mixins]]
+# config = "examplemod.mixins.json"

@@ -6,9 +6,23 @@ architectury {
     forge()
 }
 
+loom {
+    // accessWidenerPath = project(":common").loom.accessWidenerPath
+
+    /*
+    forge {
+        // convertAccessWideners = true
+        // extraAccessWideners.add loom.accessWidenerPath.get().asFile.name
+
+        // mixinConfig "examplemod-common.mixins.json"
+        // mixinConfig "examplemod.mixins.json"
+    }
+    */
+}
+
 configurations {
     common
-    shadowCommon // Don't use shadow from the shadow plugin because we don't want IDEA to index this.
+    shadowCommon
     compileClasspath.extendsFrom common
     runtimeClasspath.extendsFrom common
     developmentForge.extendsFrom common
@@ -16,13 +30,12 @@ configurations {
 
 dependencies {
     forge "net.minecraftforge:forge:${rootProject.forge_version}"
-    // Remove the next line if you don't want to depend on the API
     modApi "dev.architectury:architectury-forge:${rootProject.architectury_version}"
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
 
-    modApi "ml.pkom:mcpitanlibarch-forge+${rootProject.mcpitanlib_version}"
+    modApi "net.pitan76:mcpitanlib-forge+${rootProject.mcpitanlib_version}"
 }
 
 processResources {
@@ -30,7 +43,6 @@ processResources {
             "mod_name": project.mod_name,
             "version": project.version,
             "mod_id": project.mod_id,
-            "mcpitanlib_version": rootProject.mcpitanlib_version
     ]
     inputs.properties map
 
@@ -43,17 +55,17 @@ shadowJar {
     exclude "fabric.mod.json"
 
     configurations = [project.configurations.shadowCommon]
-    classifier "dev-shadow"
+    archiveClassifier.set "dev-shadow"
 }
 
 remapJar {
-    input.set shadowJar.archiveFile
+    inputFile.set shadowJar.archiveFile
     dependsOn shadowJar
-    classifier null
+    archiveClassifier.set null
 }
 
 jar {
-    classifier "dev"
+    archiveClassifier.set "dev"
 }
 
 sourcesJar {
