@@ -1,7 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "net.pitan76.examplemod.mixin.neoforge",
+  "package": "net.pitan76.mplguilib.mixin.forge",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
   ],

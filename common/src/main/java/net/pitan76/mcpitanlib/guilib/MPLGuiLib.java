@@ -1,17 +1,17 @@
-package net.pitan76.examplemod;
+package net.pitan76.mcpitanlib.guilib;
 
-import net.pitan76.examplemod.block.Blocks;
-import net.pitan76.examplemod.item.ItemGroups;
-import net.pitan76.examplemod.item.Items;
+import net.pitan76.mcpitanlib.guilib.block.Blocks;
+import net.pitan76.mcpitanlib.guilib.item.ItemGroups;
+import net.pitan76.mcpitanlib.guilib.item.Items;
 import net.pitan76.mcpitanlib.api.CommonModInitializer;
 import net.pitan76.mcpitanlib.api.registry.v2.CompatRegistryV2;
 import net.pitan76.mcpitanlib.api.util.CompatIdentifier;
 
-public class ExampleMod extends CommonModInitializer {
-    public static final String MOD_ID = "examplemod";
-    public static final String MOD_NAME = "Example Mod";
+public class MPLGuiLib extends CommonModInitializer {
+    public static final String MOD_ID = "mplguilib";
+    public static final String MOD_NAME = "MPL GuiLib";
 
-    public static ExampleMod INSTANCE;
+    public static MPLGuiLib INSTANCE;
     public static CompatRegistryV2 registry;
 
     @Override

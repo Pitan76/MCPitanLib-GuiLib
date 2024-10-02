@@ -1,17 +1,17 @@
-package net.pitan76.examplemod.forge;
+package net.pitan76.mcpitanlib.guilib.forge;
 
 import dev.architectury.platform.forge.EventBuses;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.pitan76.examplemod.ExampleMod;
+import net.pitan76.mcpitanlib.guilib.MPLGuiLib;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
-@Mod(ExampleMod.MOD_ID)
-public class ExampleModForge {
-    public ExampleModForge() {
+@Mod(MPLGuiLib.MOD_ID)
+public class MPLGuiLibForge {
+    public MPLGuiLibForge() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        EventBuses.registerModEventBus(ExampleMod.MOD_ID, modEventBus);
-        new ExampleMod();
+        EventBuses.registerModEventBus(MPLGuiLib.MOD_ID, modEventBus);
+        new MPLGuiLib();
     }
 }

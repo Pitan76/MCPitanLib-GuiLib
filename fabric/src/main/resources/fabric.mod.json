@@ -9,16 +9,16 @@
   ],
   "contact": {},
   "license": "MIT",
-  "icon": "assets/examplemod/icon.png",
+  "icon": "assets/mplguilib/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.pitan76.examplemod.fabric.ExampleModFabric"
+      "net.pitan76.mcpitanlib.guilib.fabric.MPLGuiLibFabric"
     ]
   },
   "mixins": [
-    "examplemod.mixins.json",
-    "examplemod-common.mixins.json"
+    "mplguilib.mixins.json",
+    "mplguilib-common.mixins.json"
   ],
   "depends": {
     "fabricloader": "*",
