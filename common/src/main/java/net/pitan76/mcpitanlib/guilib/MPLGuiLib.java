@@ -1,8 +1,5 @@
 package net.pitan76.mcpitanlib.guilib;
 
-import net.pitan76.mcpitanlib.guilib.block.Blocks;
-import net.pitan76.mcpitanlib.guilib.item.ItemGroups;
-import net.pitan76.mcpitanlib.guilib.item.Items;
 import net.pitan76.mcpitanlib.api.CommonModInitializer;
 import net.pitan76.mcpitanlib.api.registry.v2.CompatRegistryV2;
 import net.pitan76.mcpitanlib.api.util.CompatIdentifier;
@@ -18,10 +15,6 @@ public class MPLGuiLib extends CommonModInitializer {
     public void init() {
         INSTANCE = this;
         registry = super.registry;
-
-        ItemGroups.init();
-        Blocks.init();
-        Items.init();
     }
 
     // ----
